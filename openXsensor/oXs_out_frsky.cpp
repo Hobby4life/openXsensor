@@ -607,6 +607,9 @@ void OXS_OUT::sendSportData()
     if ( oXs_ads1115.adsCurrentData.milliAmps.available ) {
       oXs_ads1115.adsCurrentData.milliAmps.available = false ;
       sport_currentData.value = oXs_ads1115.adsCurrentData.milliAmps.value  / 100 ;
+      if (sport_currentData.value < 0) {
+        sport_currentData.value = 0;
+      }      
       sport_currentData.available = true ;
     }  
 #endif
