@@ -59,7 +59,7 @@
 
 // --------- 3 - PPM settings ---------
 
-#define PIN_PPM           2     // Uncomment this line in order to use a Rx channel to control oXs; default is 2 but my own device use 3
+//#define PIN_PPM           2     // Uncomment this line in order to use a Rx channel to control oXs; default is 2 but my own device use 3
 #define PPM_MIN_100       988     // default 1500 - 512 ; // pulse width (usec) when TX sends a channel = -100
 #define PPM_PLUS_100      2012    // default 1500 + 512 ; // pulse width (usec) when TX sends a channel = +100
 
@@ -108,7 +108,7 @@
 
 // --------- 5 - Airspeed settings ---------
 //#define AIRSPEED_AT_SEA_LEVEL_AND_15C // if this line is commented, airspeed is calculated using baro pressure and temperature (so being "true" airspeed instead of normalised airspeed)      
-//#define AIRSPEED_IN_KMH  // uncomment this line if airspeed has to be in km/h instead of knot/h ( except some old versions, openTx expects knot/h) 
+#define AIRSPEED_IN_KMH  // uncomment this line if airspeed has to be in km/h instead of knot/h ( except some old versions, openTx expects knot/h) 
 
 #define AIRSPEED_RESET_AT_PPM   100
 
@@ -120,17 +120,17 @@
 // --------- 6 - Voltages & Current sensor settings ---------
 
 // ***** 6.1 - Voltage Reference to measure voltages and current *****
-#define USE_INTERNAL_REFERENCE  // uncomment this line if you use 1.1 volt internal reference instead of Vcc (voltage divider mst be used to reduce voltages to 1.1 volt max)
-//#define USE_EXTERNAL_REFERENCE  // uncomment this line if you use an external reference instead of Vcc
-//#define REFERENCE_VOLTAGE 4970    // set value in milliVolt; if commented, oXs will use or 1100 (if internal ref is used) or 5000 (if internal ref is not used) 
+//#define USE_INTERNAL_REFERENCE  // uncomment this line if you use 1.1 volt internal reference instead of Vcc (voltage divider mst be used to reduce voltages to 1.1 volt max)
+#define USE_EXTERNAL_REFERENCE  // uncomment this line if you use an external reference instead of Vcc
+#define REFERENCE_VOLTAGE 3342    // set value in milliVolt; if commented, oXs will use or 1100 (if internal ref is used) or 5000 (if internal ref is not used) 
 
 // ***** 6.2 - Voltage parameters *****
 // Each of following lines contains 6 parameters, the first value is for VOLT_1, the second for VOLT_2, ... up to the sixth for VOLT_6 
-#define PIN_VOLTAGE        6  , 8     , 8   , 8    , 8   , 8               //  Fill all 6 values; set to 0 up to 7 for analog pins A0 up to A7 ; set the value to 8 for the voltage(s) not to be measured.
-#define RESISTOR_TO_GROUND  2.95 , 10    , 10  , 10 , 0  , 18               // set value to 0 when no divider is used for a voltage; can contains decimals 
-#define RESISTOR_TO_VOLTAGE 46.9 , 8.7 , 22 , 27  , 0 , 47              // set value to 0 when no divider is used for a voltage; can contains decimals 
+#define PIN_VOLTAGE        2  , 8     , 8   , 8    , 8   , 8               //  Fill all 6 values; set to 0 up to 7 for analog pins A0 up to A7 ; set the value to 8 for the voltage(s) not to be measured.
+#define RESISTOR_TO_GROUND  10 , 10    , 10  , 10 , 0  , 18               // set value to 0 when no divider is used for a voltage; can contains decimals 
+#define RESISTOR_TO_VOLTAGE 82 , 8.7 , 22 , 27  , 0 , 47              // set value to 0 when no divider is used for a voltage; can contains decimals 
 #define OFFSET_VOLTAGE      0   , 0     , 0    , 0    , 0   , 0                // optionnal, can be negative, must be integer, in principe in mv
-#define SCALE_VOLTAGE       1.00 , 1.0   , 1.0  , 1.0  , 1.0 , 1.0              // optionnal, can be negative, can have decimals
+#define SCALE_VOLTAGE       0.999194198 , 1.0   , 1.0  , 1.0  , 1.0 , 1.0              // optionnal, can be negative, can have decimals
 
 // ***** 6.3 - Max number of Lipo cells to measure (and transmit to Tx) *****      Is defined only in oXs_config_basic.h file
 
@@ -148,8 +148,8 @@
 
 // ***** 6.5 - Current parameters  *****
 #define PIN_CURRENTSENSOR   6  //      Arduino pin used to measure the voltage provided by a current sensor
-#define MVOLT_AT_ZERO_AMP              2500    // in millivolt
-#define MVOLT_PER_AMP                  60      // in milliVolt per Amp
+#define MVOLT_AT_ZERO_AMP              1676    // in millivolt
+#define MVOLT_PER_AMP                  6 //6.10169      // in milliVolt per Amp
 #define RESISTOR_TO_GROUND_FOR_CURRENT  0   // put as comment or set to 0 if no divider is used (e.g. 19.8 for 1.1 internal ref)
 #define RESISTOR_TO_CURRENT_SENSOR      0   // put as comment or set to 0 if no divider is used (e.g  39   for 1.1 internal ref)
 
@@ -230,5 +230,3 @@
 
 
 #endif// End define OXS_CONFIG_ADVANCED_h
-
-

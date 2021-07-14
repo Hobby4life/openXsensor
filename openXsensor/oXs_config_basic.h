@@ -68,7 +68,7 @@
 
 // --------- 4 - Vario settings ---------
 // ***** 4.1 - Connecting 1 or 2 barometric sensor(s)  ***** 
-#define FIRST_BARO_SENSOR_USE   MS5611       // select between NO_BARO , MS5611, GY86 , BMP085 , BMP180 , GY87,  BMP280  
+#define FIRST_BARO_SENSOR_USE   NO_BARO       // select between NO_BARO , MS5611, GY86 , BMP085 , BMP180 , GY87,  BMP280  
                                               // Note : when used, second sensor is to define in oXs_config_advanced.h
                                               
 // ***** 4.2 - Type of Vspeed to transmit  *****                                    
@@ -96,7 +96,7 @@
 // ***** 6.4 - Convert voltage to temperature (° Celcius) *****                    see oXs_config_advanced.h if you want to measure temperature(s) with thermistor
 
 // ***** 6.5 - Current parameters  *****                                           see also oXs_config_advanced.h for additionnal parameters if you want to measure current with a current sensor
-#define ARDUINO_MEASURES_A_CURRENT   NO                                       //   select between YES , NO 
+#define ARDUINO_MEASURES_A_CURRENT   YES                                       //   select between YES , NO 
 
 // ***** 6.6 - Ads1115 parameters  *****                                           see oXs_config_advanced.h for additional parameters when AN_ADS1115_IS_CONNECTED is YES
 #define AN_ADS1115_IS_CONNECTED   NO                 // select between YES , NO
@@ -130,5 +130,3 @@
 
 
 #endif// End define OXS_CONFIG_BASIC_h
-
-
