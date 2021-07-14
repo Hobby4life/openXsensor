@@ -598,6 +598,9 @@ void OXS_OUT::sendSportData()
     if ( oXs_Current.currentData.milliAmps.available) {
       oXs_Current.currentData.milliAmps.available = false ; 
       sport_currentData.value = oXs_Current.currentData.milliAmps.value  / 100 ;
+      if (sport_currentData.value < 0) {
+        sport_currentData.value = 0;
+      }
       sport_currentData.available = true ;
     }  
 #elif defined(AN_ADS1115_IS_CONNECTED) && (AN_ADS1115_IS_CONNECTED == YES ) && defined(ADS_MEASURE) && defined(ADS_CURRENT_BASED_ON)
