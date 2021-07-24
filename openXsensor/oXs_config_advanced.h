@@ -120,9 +120,15 @@
 // --------- 6 - Voltages & Current sensor settings ---------
 
 // ***** 6.1 - Voltage Reference to measure voltages and current *****
+<<<<<<< Updated upstream
 #define USE_INTERNAL_REFERENCE  // uncomment this line if you use 1.1 volt internal reference instead of Vcc (voltage divider mst be used to reduce voltages to 1.1 volt max)
 //#define USE_EXTERNAL_REFERENCE  // uncomment this line if you use an external reference instead of Vcc
 //#define REFERENCE_VOLTAGE 4970    // set value in milliVolt; if commented, oXs will use or 1100 (if internal ref is used) or 5000 (if internal ref is not used) 
+=======
+//#define USE_INTERNAL_REFERENCE  // uncomment this line if you use 1.1 volt internal reference instead of Vcc (voltage divider mst be used to reduce voltages to 1.1 volt max)
+#define USE_EXTERNAL_REFERENCE  // uncomment this line if you use an external reference instead of Vcc
+#define REFERENCE_VOLTAGE 3312    // set value in milliVolt; if commented, oXs will use or 1100 (if internal ref is used) or 5000 (if internal ref is not used) 
+>>>>>>> Stashed changes
 
 // ***** 6.2 - Voltage parameters *****
 // Each of following lines contains 6 parameters, the first value is for VOLT_1, the second for VOLT_2, ... up to the sixth for VOLT_6 
@@ -130,7 +136,11 @@
 #define RESISTOR_TO_GROUND  2.95 , 10    , 10  , 10 , 0  , 18               // set value to 0 when no divider is used for a voltage; can contains decimals 
 #define RESISTOR_TO_VOLTAGE 46.9 , 8.7 , 22 , 27  , 0 , 47              // set value to 0 when no divider is used for a voltage; can contains decimals 
 #define OFFSET_VOLTAGE      0   , 0     , 0    , 0    , 0   , 0                // optionnal, can be negative, must be integer, in principe in mv
+<<<<<<< Updated upstream
 #define SCALE_VOLTAGE       1.00 , 1.0   , 1.0  , 1.0  , 1.0 , 1.0              // optionnal, can be negative, can have decimals
+=======
+#define SCALE_VOLTAGE       1.002429149797571 , 1.0   , 1.0  , 1.0  , 1.0 , 1.0              // optionnal, can be negative, can have decimals
+>>>>>>> Stashed changes
 
 // ***** 6.3 - Max number of Lipo cells to measure (and transmit to Tx) *****      Is defined only in oXs_config_basic.h file
 
@@ -148,8 +158,13 @@
 
 // ***** 6.5 - Current parameters  *****
 #define PIN_CURRENTSENSOR   6  //      Arduino pin used to measure the voltage provided by a current sensor
+<<<<<<< Updated upstream
 #define MVOLT_AT_ZERO_AMP              2500    // in millivolt
 #define MVOLT_PER_AMP                  60      // in milliVolt per Amp
+=======
+#define MVOLT_AT_ZERO_AMP              1655    // in millivolt
+#define MVOLT_PER_AMP                  6.578947368421052 //6.10169      // in milliVolt per Amp
+>>>>>>> Stashed changes
 #define RESISTOR_TO_GROUND_FOR_CURRENT  0   // put as comment or set to 0 if no divider is used (e.g. 19.8 for 1.1 internal ref)
 #define RESISTOR_TO_CURRENT_SENSOR      0   // put as comment or set to 0 if no divider is used (e.g  39   for 1.1 internal ref)
 
@@ -172,7 +187,7 @@
 // --------- 9 - GPS ------------------------------------------------------------------------------------------------
 //#define GPS_SPEED_IN_KMH  // uncomment this line if GPS speed has to be sent in km/h instead of knot/h (only for Frsky protocol)
 #define GPS_SPEED_3D      // uncomment this line if GPS speed has to be the 3d speed instead of the 2d speed (note: 3d is probably less accurate - to test) 
-#define GPS_REFRESH_RATE  5      // rate at which GPS sent new data; select between 1, 5 or 10 (Hz). Default = 5 Hz; Ublox NEO6 does not support 10 hz  
+#define GPS_REFRESH_RATE  10      // rate at which GPS sent new data; select between 1, 5 or 10 (Hz). Default = 5 Hz; Ublox NEO6 does not support 10 hz  
 
 // --------- 10 - IMU 6050 --- (accelerometer + gyro) and HMC5883 (magnetometer) --------------------------------------
 // ***** 10.1 - IMU 6050 *****
